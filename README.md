@@ -5,7 +5,7 @@ To use my patches as subpatches, simply clone the one suits your need to your co
 
 Note: In order to open the demo_xxx file properly, you need to put both demo file and the corresponding subpatch file under a same directory, or otherwise it will show red in the patch. If they are still showing red regardless, just find the matching subpatches and drag them into the demo patch then connect all the pins manually (shouldn't be too hard).
 # Just read the instructions.
-I'm currently working on KinectV2, so there will be a lot of nodes coming from DirectX11.nodes pack. You might wanna make sure you installed KinectV2 SDK or runtime properly. You can follow the guide here to setup your Kinect:
+I'm currently working on KinectV2, so there will be a lot of nodes coming from DirectX11.nodes pack. You might also wanna make sure you installed KinectV2 SDK or runtime properly. You can follow the guide here to setup your Kinect:
 
 <a href="https://vvvv.org/documentation/kinect">https://vvvv.org/documentation/kinect</a>
 ## 1_KinectLightControl
