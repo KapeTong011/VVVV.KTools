@@ -1,0 +1,449 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
+   <PATCH nodename="D:\1-Projects\VVVVprojects\KTools Patches\HandControl_Lighting.v4p" systemname="HandControl_Lighting" filename="D:\1-Projects\VVVVprojects\HandControl_Lighting.v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="29925" top="210" width="24120" height="15795">
+   </BOUNDS>
+   <NODE nodename="Group (DX11.Layer)" id="2" systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
+   <BOUNDS type="Node" left="10470" top="7170" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10470" top="7170" width="2400" height="1800">
+   </BOUNDS>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AxisAndGrid (DX11)" filename="%VVVV%\packs\dx11\nodes\modules\AxisAndGrid\AxisAndGrid (DX11).v4p" nodename="AxisAndGrid (DX11)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="14145" top="5130" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="2" dstpinname="Layer 1" linkstyle="VHV">
+   <LINKPOINT x="12435" y="6080">
+   </LINKPOINT>
+   <LINKPOINT x="12420" y="6595">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="Renderer (DX11)" componentmode="InAWindow" id="4" systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
+   <BOUNDS type="Node" left="9645" top="7950" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9645" top="7950" width="6435" height="6585">
+   </BOUNDS>
+   <BOUNDS type="Window" left="45060" top="240" width="21285" height="13110">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AspectRatio (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="AspectRatio (DX11.Layer)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="9795" top="7545" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9795" top="7545" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Layer Out" dstnodeid="5" dstpinname="Layer In">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Layer Out" dstnodeid="4" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.79.17-g63a3d4ba77\vvvv\nodes\modules\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="10905" top="7545" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="View" dstnodeid="4" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Projection" dstnodeid="4" dstpinname="Projection">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="9090" top="990" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9090" top="990" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="9285" top="1755" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9285" top="1755" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Reset">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11" Version="1.0.5">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   <NODE systemname="Player (Kinect2 Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\kinect2\VVVV.DX11.Nodes.Kinect2.dll" nodename="Player (Kinect2 Microsoft)" componentmode="Hidden" id="51">
+   <BOUNDS type="Node" left="6255" top="8985" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Player Color" visible="1">
+   </PIN>
+   <PIN pinname="Kinect Runtime" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="HSL (Color Join)" nodename="HSL (Color Join)" componentmode="Hidden" id="50">
+   <BOUNDS type="Node" left="6750" top="8565" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="50" srcpinname="Output" dstnodeid="51" dstpinname="Player Color">
+   </LINK>
+   <NODE systemname="DepthRGB (Kinect2 Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\kinect2\VVVV.DX11.Nodes.Kinect2.dll" nodename="DepthRGB (Kinect2 Microsoft)" componentmode="Hidden" id="49">
+   <BOUNDS type="Node" left="8100" top="8970" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Kinect Runtime" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Raw Data" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Relative Lookup" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="FilterRGBView (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\plugins\kinect2\texture11\FilterRGBView.tfx" nodename="FilterRGBView (DX11.TextureFX)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="6255" top="10080" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="PlayerTexture" visible="1">
+   </PIN>
+   <PIN pinname="DepthRGBMapTexture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="51" srcpinname="Texture" dstnodeid="48" dstpinname="PlayerTexture" linkstyle="Bezier">
+   <LINKPOINT x="6315" y="9660">
+   </LINKPOINT>
+   <LINKPOINT x="6855" y="9660">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Texture" dstnodeid="48" dstpinname="DepthRGBMapTexture" linkstyle="Bezier">
+   <LINKPOINT x="8100" y="9645">
+   </LINKPOINT>
+   <LINKPOINT x="7110" y="9645">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="RGB (Kinect2 Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\kinect2\VVVV.DX11.Nodes.Kinect2.dll" nodename="RGB (Kinect2 Microsoft)" componentmode="Hidden" id="47">
+   <BOUNDS type="Node" left="5160" top="8940" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Kinect Runtime" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="47" srcpinname="Texture" dstnodeid="48" dstpinname="Texture In" linkstyle="Bezier">
+   <LINKPOINT x="5220" y="9630">
+   </LINKPOINT>
+   <LINKPOINT x="6240" y="9630">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="57">
+   <BOUNDS type="Node" left="6270" top="11025" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6270" top="11025" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="45150" top="10875" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="48" srcpinname="Texture Out" dstnodeid="57" dstpinname="Texture In">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="83">
+   <BOUNDS type="Node" left="315" top="210" width="6480" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="315" top="210" width="4980" height="1335">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Note that if you want to use custom geometry file instead of a sphere, I recommend using SceneFile(DX11.Geometry Assimp) node, it provide a lot of common 3d file type support. Visit the link below to see assimp all supported file format.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="84">
+   <BOUNDS type="Node" left="735" top="1740" width="2670" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="735" top="1740" width="2670" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="https://github.com/assimp/assimp">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Url">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="85">
+   <BOUNDS type="Node" left="255" top="2220" width="705" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="255" top="2220" width="705" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|See also|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="SceneFile (DX11.Geometry Assimp)" filename="%VVVV%\packs\dx11\nodes\plugins\assimp\VVVV.DX11.Nodes.Assimp.dll" nodename="SceneFile (DX11.Geometry Assimp)" componentmode="Hidden" id="86">
+   <BOUNDS type="Node" left="1095" top="2220" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1095" top="2220" width="3000" height="3000">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Mesh (DX11.Geometry Assimp)" filename="%VVVV%\packs\dx11\nodes\plugins\assimp\VVVV.DX11.Nodes.Assimp.dll" nodename="Mesh (DX11.Geometry Assimp)" componentmode="Hidden" id="87">
+   <BOUNDS type="Node" left="1995" top="2220" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1995" top="2220" width="3000" height="3000">
+   </BOUNDS>
+   </NODE>
+   <NODE id="76" nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox">
+   <BOUNDS type="Node" left="9885" top="1080" width="2640" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9885" top="1080" width="2640" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;-- Right click when you are ready.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="89">
+   <BOUNDS type="Box" left="870" top="5355" width="1890" height="6135">
+   </BOUNDS>
+   <BOUNDS type="Node" left="870" top="5355" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Multiline">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="25">
+   </PIN>
+   <PIN pinname="Input String" visible="1" slicecount="25" values=",,,,,,,,,,,,,,,,,,,,,,,,">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="7">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Joint List|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="90">
+   <BOUNDS type="Box" left="9975" top="1740" width="855" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9975" top="1740" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="7">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="JointPicker">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="91">
+   <BOUNDS type="Node" left="11055" top="1740" width="2760" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11055" top="1740" width="2820" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;-- Put the joint index number here.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Sphere (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Sphere (DX11.Geometry)" componentmode="Hidden" id="92">
+   <BOUNDS type="Node" left="10290" top="2340" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10290" top="2340" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="93">
+   <BOUNDS type="Node" left="11295" top="2340" width="4050" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11295" top="2340" width="4050" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;-- You can use other geometry or even use your own.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="96">
+   <BOUNDS type="Node" left="10935" top="3360" width="840" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10935" top="3360" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="95">
+   <BOUNDS type="Box" left="10950" top="2925" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10950" top="2925" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="C:\Users\Administrator\Desktop\temp\ESP_019377_1695_phone.jpg">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="|All Files (*.*)||*.*|">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="94">
+   <BOUNDS type="Node" left="11925" top="2925" width="5085" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11925" top="2925" width="5085" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;-- Choose the image I provide, or pick one of yours if you feel like it.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="95" srcpinname="Output String" dstnodeid="96" dstpinname="Filename">
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="97">
+   <BOUNDS type="Node" left="10965" top="4215" width="2940" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10965" top="4215" width="2940" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;-- Right click to see more discription.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE id="88" componentmode="Hidden" systemname="KinectLightControl" filename="KinectLightControl.v4p" nodename="KinectLightControl.v4p">
+   <BOUNDS type="Window" left="43230" top="2070" width="21600" height="13065">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9090" top="4215" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9090" top="4215" width="21600" height="13075">
+   </BOUNDS>
+   <PIN pinname="JointList" visible="1">
+   </PIN>
+   <PIN pinname="Joint List" visible="1">
+   </PIN>
+   <PIN pinname="JointPicker" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="96" srcpinname="Texture Out" dstnodeid="88" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="92" srcpinname="Geometry Out" dstnodeid="88" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Y Output Value" dstnodeid="88" dstpinname="JointPicker">
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Joint List" dstnodeid="89" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Kinect Runtime" dstnodeid="47" dstpinname="Kinect Runtime" linkstyle="Bezier">
+   <LINKPOINT x="11105" y="6465">
+   </LINKPOINT>
+   <LINKPOINT x="4360" y="6930">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Kinect Runtime" dstnodeid="51" dstpinname="Kinect Runtime" linkstyle="Bezier">
+   <LINKPOINT x="11105" y="6488">
+   </LINKPOINT>
+   <LINKPOINT x="5455" y="6953">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Kinect Runtime" dstnodeid="49" dstpinname="Kinect Runtime" linkstyle="Bezier">
+   <LINKPOINT x="11105" y="6480">
+   </LINKPOINT>
+   <LINKPOINT x="7300" y="6945">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="88" dstpinname="Reset">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="88" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Layer" dstnodeid="2" dstpinname="Layer 2">
+   </LINK>
+   </PATCH>
